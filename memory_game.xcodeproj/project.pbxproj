@@ -13,10 +13,13 @@
 		BB57C91E246C039400B7E941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB57C91D246C039400B7E941 /* Assets.xcassets */; };
 		BB57C921246C039400B7E941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB57C91F246C039400B7E941 /* LaunchScreen.storyboard */; };
 		BB57C92D246C792C00B7E941 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57C92C246C792C00B7E941 /* GameViewController.swift */; };
+		BBB4B1DE249432380055F5B1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB4B1DD249432380055F5B1 /* Game.swift */; };
+		BBB4B1E0249560210055F5B1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB4B1DF249560210055F5B1 /* Location.swift */; };
+		BBB4B1E62495671B0055F5B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB4B1E52495671B0055F5B1 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB57C911246C039100B7E941 /* memory_game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memory_game.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB57C911246C039100B7E941 /* memory_game_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memory_game_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB57C914246C039100B7E941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB57C916246C039100B7E941 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BB57C91B246C039100B7E941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		BB57C920246C039400B7E941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB57C922246C039400B7E941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB57C92C246C792C00B7E941 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		BBB4B1DD249432380055F5B1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		BBB4B1DF249560210055F5B1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		BBB4B1E52495671B0055F5B1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +54,7 @@
 		BB57C912246C039100B7E941 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB57C911246C039100B7E941 /* memory_game.app */,
+				BB57C911246C039100B7E941 /* memory_game_2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,7 +62,8 @@
 		BB57C913246C039100B7E941 /* memory_game */ = {
 			isa = PBXGroup;
 			children = (
-				BB57C92C246C792C00B7E941 /* GameViewController.swift */,
+				BBB4B1E2249561000055F5B1 /* ViewControllers */,
+				BBB4B1E1249560ED0055F5B1 /* Models */,
 				BB57C914246C039100B7E941 /* AppDelegate.swift */,
 				BB57C916246C039100B7E941 /* SceneDelegate.swift */,
 				BB57C91A246C039100B7E941 /* Main.storyboard */,
@@ -65,6 +72,24 @@
 				BB57C922246C039400B7E941 /* Info.plist */,
 			);
 			path = memory_game;
+			sourceTree = "<group>";
+		};
+		BBB4B1E1249560ED0055F5B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BBB4B1DF249560210055F5B1 /* Location.swift */,
+				BBB4B1DD249432380055F5B1 /* Game.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BBB4B1E2249561000055F5B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BBB4B1E52495671B0055F5B1 /* MainViewController.swift */,
+				BB57C92C246C792C00B7E941 /* GameViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,7 +109,7 @@
 			);
 			name = memory_game;
 			productName = memory_game;
-			productReference = BB57C911246C039100B7E941 /* memory_game.app */;
+			productReference = BB57C911246C039100B7E941 /* memory_game_2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -140,7 +165,10 @@
 			files = (
 				BB57C92D246C792C00B7E941 /* GameViewController.swift in Sources */,
 				BB57C915246C039100B7E941 /* AppDelegate.swift in Sources */,
+				BBB4B1E0249560210055F5B1 /* Location.swift in Sources */,
+				BBB4B1E62495671B0055F5B1 /* MainViewController.swift in Sources */,
 				BB57C917246C039100B7E941 /* SceneDelegate.swift in Sources */,
+				BBB4B1DE249432380055F5B1 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +320,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "liel-titelbaum.memory-game";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = memory_game_2;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -310,7 +338,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "liel-titelbaum.memory-game";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = memory_game_2;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
