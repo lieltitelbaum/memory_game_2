@@ -12,7 +12,6 @@ class Location: Codable {
     var longitude : Double = 0
     var latitude : Double = 0
 
-    //Functions
     init (){}
     
     init (latitude: Double, longitude: Double)
@@ -20,7 +19,7 @@ class Location: Codable {
         self.latitude = latitude
         self.longitude = longitude
     }
-    //MARK: - toString
+    
     public var toString: String {
         return "latitude: \(self.latitude), longitude: \(self.longitude)"
     }

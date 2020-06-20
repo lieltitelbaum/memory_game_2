@@ -19,13 +19,13 @@ class Game{
     private var imageInPlace: [(image: UIImage, isOpen: Bool)] = []//array of tuple of image and if the card is open -> the index represent the card tag(simulate its' location)
     private var cards: [UIButton] = []
     private var timer = Timer()
-    private var numOfMoves: Int = 20
+    private var numOfMoves: Int = 25
     //Const
-    private let images = [#imageLiteral(resourceName: "ic_chicken") ,#imageLiteral(resourceName: "ic_burger") ,#imageLiteral(resourceName: "ic_fries") ,#imageLiteral(resourceName: "ic_broccoli") ,#imageLiteral(resourceName: "ic_chocolate") ,#imageLiteral(resourceName: "ic_sushi") ,#imageLiteral(resourceName: "ic_cake") ,#imageLiteral(resourceName: "ic_pizza")]
+    private let images = [#imageLiteral(resourceName: "ic_chicken") ,#imageLiteral(resourceName: "ic_burger") ,#imageLiteral(resourceName: "ic_fries") ,#imageLiteral(resourceName: "ic_broccoli") ,#imageLiteral(resourceName: "ic_chocolate") ,#imageLiteral(resourceName: "ic_sushi") ,#imageLiteral(resourceName: "ic_cake") ,#imageLiteral(resourceName: "ic_apple"), #imageLiteral(resourceName: "ic_pizza"), #imageLiteral(resourceName: "avocado")]
     private let backCard = #imageLiteral(resourceName: "ic_back_card")
     private let cardMatrixSize = 20 //5*4
     private let numOfImageDuplicate = 2
-    private let gameMoves = 20
+    private let gameMoves = 25
     
     
     //functions
@@ -130,7 +130,10 @@ class Game{
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
                 duration += 1
                 self.isTimerOn = true //on status
-                timerLabel.text = String(duration) + " S"
+        
+                let seconds = String(format: "%02d", (duration%60))
+                let minutes = String(format: "%02d", duration/60)
+                timerLabel.text = "\(minutes):\(seconds)"
             }
         }
         else {
@@ -143,25 +146,21 @@ class Game{
         return self.isTimerOn
     }
     
-    public func checkIfWinner(playBtn: UIButton, timerLbl: UILabel){//check if the user lost or won
+    public func checkIfWinner(timerLbl: UILabel) -> Bool{//check if the user lost or won
         if(pairedSuccessfully == cardMatrixSize/numOfImageDuplicate) {//if the user matched all of the cards-> he wons
-            setGameWhenStop(winnerStatus: true, playBtn: playBtn, timerLbl: timerLbl)
+            setGameWhenStop(winnerStatus: true,timerLbl: timerLbl)
+            return true
         }
         else if(numOfMoves == 0){//if he lost -> ran out of moves
-            setGameWhenStop(winnerStatus: false, playBtn: playBtn, timerLbl: timerLbl)
+            setGameWhenStop(winnerStatus: false, timerLbl: timerLbl)
+            return false
         }
+        return false
     }
     
-    private func setGameWhenStop(winnerStatus: Bool, playBtn: UIButton, timerLbl: UILabel) {
+    private func setGameWhenStop(winnerStatus: Bool, timerLbl: UILabel) {
         setTimer(on: false, timerLabel: timerLbl)//pause timer
-        playBtn.isHidden = false
         isPlaying = false
-        if(winnerStatus) {
-            playBtn.setTitle("YOU WON!\nPlay again", for: .normal)
-        }
-        else {
-            playBtn.setTitle("YOU LOST\nPlay again", for: .normal)
-        }
     }
 }
 

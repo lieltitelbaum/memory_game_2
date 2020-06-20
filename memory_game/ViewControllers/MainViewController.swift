@@ -12,31 +12,23 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var top_ten_btn: UIButton!
     @IBOutlet weak var start_game_btn: UIButton!
-    
-    private let segueStartGameId = "game"
-    private let segueStartTopTenId = "topTen"
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+         navigationController?.setNavigationBarHidden(true,animated: false)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.setNavigationBarHidden(false,animated: false)
     }
-    */
+
     @IBAction func startGame(_ sender: UIButton) {
-        performSegue(withIdentifier: segueStartGameId, sender: self)
+        performSegue(withIdentifier: "PlayGame", sender: self)
     }
     
     @IBAction func startTopTen(_ sender: UIButton) {
-        performSegue(withIdentifier: segueStartTopTenId, sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        performSegue(withIdentifier: "TopTen", sender: self)
     }
 }
+

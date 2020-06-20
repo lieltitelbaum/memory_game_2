@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "background_pink.jpg",
+      "filename" : "home_bck.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "dark_pink_back.jpg",
+      "filename" : "home_dark.jpg",
       "appearances" : [
         {
           "appearance" : "luminosity",
