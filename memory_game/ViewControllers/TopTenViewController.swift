@@ -20,19 +20,19 @@ class TopTenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(GameViewController.back(sender:)))
+               self.navigationItem.leftBarButtonItem = newBackButton
+        navigationController?.setNavigationBarHidden(false,animated: false)
         highScores = myUserDef.retriveUserDefualts()
         topTenTable.delegate = self
         topTenTable.dataSource = self
     }
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//
-//        if self.isMovingFromParent {
-//            let vc = GameViewController()
-//            vc.initGame()
-//        }
-//    }
+    
+    @objc func back(sender: UIBarButtonItem) {
+        navigationController?.setNavigationBarHidden(true,animated: false)
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 }
 
 

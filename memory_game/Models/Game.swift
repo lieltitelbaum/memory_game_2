@@ -26,13 +26,15 @@ class Game{
     private let cardMatrixSize = 20 //5*4
     private let numOfImageDuplicate = 2
     private let gameMoves = 25
-    
+    private var duration = 0
     
     //functions
     public func getMovesNum() -> Int{
         return self.gameMoves;
     }
-    
+    public func getDuration() -> Int{
+        return self.duration
+    }
     public func getCurrentPlayerMoves() -> Int {
         return self.numOfMoves
     }
@@ -95,7 +97,7 @@ class Game{
             pairedSuccessfully += 1
             previous.isEnabled = false
             current.isEnabled = false
-            score += 10 //add 10 points when cards are being paired successfully
+            //            score += 10 //add 10 points when cards are being paired successfully
             return true //returns true if the cards are match
         }
         else {
@@ -126,19 +128,39 @@ class Game{
     
     func setTimer(on: Bool, timerLabel: UILabel){
         if(on) {//run timer each second
-            var duration = 0
+            duration = 0
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-                duration += 1
+                self.duration += 1
                 self.isTimerOn = true //on status
-        
-                let seconds = String(format: "%02d", (duration%60))
-                let minutes = String(format: "%02d", duration/60)
+                
+                let seconds = String(format: "%02d", (self.duration%60))
+                let minutes = String(format: "%02d", self.duration/60)
                 timerLabel.text = "\(minutes):\(seconds)"
             }
         }
         else {
             timer.invalidate()//pause
             self.isTimerOn = false//pause status
+        }
+    }
+    func addScore(isMatch: Bool, score_lbl: UILabel) {
+        
+        let time = getDuration()
+        
+        let minutes = time/60
+        if(isMatch){
+            if(minutes == 0) {
+                score += 20
+            }
+            else if(minutes == 1){
+                score += 10
+            }
+            else{
+                score += 5
+            }
+            print("min: \(minutes)")
+            print(score)
+            score_lbl.text = "Score: \(score)"
         }
     }
     

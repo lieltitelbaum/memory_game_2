@@ -30,22 +30,30 @@ class GameViewController: UIViewController {
     private var myUserDef = MyUserDefaults()
     private var highScores = [HighScore]()
     
-    public var userName:String = ""
     private var isUserWon:Bool = false
     private var game = Game()
     private var counter: Int = 0//pressing cards counter
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(GameViewController.back(sender:)))
+               self.navigationItem.leftBarButtonItem = newBackButton
+        navigationController?.setNavigationBarHidden(false,animated: false)
         
         initGame()
         game.setPlayingStatus(status: true)
     }
     
+    @objc func back(sender: UIBarButtonItem) {
+        navigationController?.setNavigationBarHidden(true,animated: false)
+        self.navigationController?.popViewController(animated: true)
+    }
+
     func setGameLabels() {
         game_LBL_moves.text = String(game.getMovesNum())
         game_LBL_timer.text = "00:00"
-        game_LBL_moves_headline.text = "Moves"
+        game_LBL_moves_headline.text = "Moves:"
         game_LBL_score.text = "Score: 0"
     }
     
@@ -65,8 +73,7 @@ class GameViewController: UIViewController {
     func isCardsMatch(previous: UIButton, current: UIButton) {
         //if cards match-> add score to user
         if(game.checkMatch(previous: previous, current: current)) {
-            game.setScore(score: game.getScore() + 10)
-            game_LBL_score.text = "Score: " + String(game.getScore())
+            game.addScore(isMatch: true, score_lbl: game_LBL_score)
         }
     }
     
