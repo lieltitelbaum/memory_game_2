@@ -1,4 +1,4 @@
-# memory_game liel titelbaum
+# memory_game 2.0 Liel Titelbaum
 
 <img src="https://github.com/lieltitelbaum/memory_game_2/blob/master/Screen%20Shot%202020-06-21%20at%2014.33.25.png"
 width="288">
