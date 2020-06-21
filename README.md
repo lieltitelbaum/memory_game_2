@@ -1,5 +1,16 @@
 # memory_game liel titelbaum
 
-<img src="https://github.com/lieltitelbaum/memory_game/blob/master/Screen%20Shot%202020-05-17%20at%2017.10.07.png" width="288">
-<img src="https://github.com/lieltitelbaum/memory_game/blob/master/Screen%20Shot%202020-05-17%20at%2017.10.35.png" width="288">
-<img src="https://github.com/lieltitelbaum/memory_game/blob/master/Screen%20Shot%202020-05-17%20at%2017.11.00.png" width="288">
+<["Home Screen"]img src="https://github.com/lieltitelbaum/memory_game_2/blob/master/Screen%20Shot%202020-06-21%20at%2014.33.25.png"
+width="288">
+
+<img src="https://github.com/lieltitelbaum/memory_game_2/blob/master/Screen%20Shot%202020-06-21%20at%2014.33.46.png"
+width="288">
+
+<img src="https://github.com/lieltitelbaum/memory_game_2/blob/master/Screen%20Shot%202020-06-21%20at%2014.33.59.png"
+width="288">
+
+<img src="https://github.com/lieltitelbaum/memory_game_2/blob/master/Screen%20Shot%202020-06-21%20at%2014.41.01.png"
+width="288">
+
+<img src="https://github.com/lieltitelbaum/memory_game_2/blob/master/Screen%20Shot%202020-06-21%20at%2014.50.26.png"
+width="288">
